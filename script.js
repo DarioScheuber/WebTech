@@ -54,10 +54,10 @@ function animate() {
   c.fillRect(215, 285, -200, positiony);
   c.fillStyle = "yellow";
   c.fillRect(215, 285, -200, (positiony * 0.8));
-  c.fillStyle = "rgba(255, 255, 255, 0.6)";
-  c.fillRect(15, 120, 200, 60);
+  //c.fillStyle = "rgba(255, 255, 255, 0.6)";
+  //c.fillRect(15, 120, 200, 60);
   let img = document.getElementById("logo");
-  c.drawImage(img, 65, 100, 100, 100);
+  c.drawImage(img, 63, 100, 100, 100);
 
 }
 
