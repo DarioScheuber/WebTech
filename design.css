@@ -33,6 +33,37 @@ nav ul li a {
     color: #fff;
 }
 
+#navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    transition: top 0.3s ease; /* Animation für den Effekt beim Fixieren */
+}
+
+#navbar.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+#navbar ul li a {
+    color: #fff; /* Textfarbe der Links */
+    text-decoration: none;
+    font-size: 18px;
+}
+
 main {
     padding: 20px;
 }
