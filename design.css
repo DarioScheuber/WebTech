@@ -78,7 +78,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -124,7 +123,9 @@ div.box1, div.box2, div.box3 {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
+
+/* Kontaktformular */
 
   .container {
     max-width: 400px;
@@ -164,6 +165,31 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+
+/* Mitgliederliste */
+.members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.member {
+    width: 200px;
+    text-align: center;
+}
+.member img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.member h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 
 [data-id="maximenuck137"] .mobilemenuck-item > .level1 {
 	background: #2A3252;
