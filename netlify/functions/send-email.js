@@ -8,14 +8,14 @@ exports.handler = async (event) => {
         const { email, name, message } = JSON.parse(event.body);
         const msgToUser = {
             to: email,
-            from: 'info@tourdebier.com',
+            from: 'info@tourdebier.netlify.app.com',
             subject: 'Bestätigung Ihrer Nachricht',
             text: `Hallo ${name},\n\nWir haben Ihre Nachricht erhalten: ${message}\n\nVielen Dank!`
         };
 
         const msgToAdmin = {
             to: 'janis.felder@stud.hslu.ch',
-            from: 'info@tourdebier.com',
+            from: 'info@tourdebier.netlify.app.com',
             subject: 'Neue Nachricht erhalten',
             text: `Sie haben eine neue Nachricht von ${name} erhalten:\n\n${message}`
         };
