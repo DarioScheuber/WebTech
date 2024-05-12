@@ -8,14 +8,14 @@ exports.handler = async (event) => {
         const { email, name, message } = JSON.parse(event.body);
         const msgToUser = {
             to: email,
-            from: 'info@yourdomain.com',
+            from: 'info@tourdebier.com',
             subject: 'Bestätigung Ihrer Nachricht',
             text: `Hallo ${name},\n\nWir haben Ihre Nachricht erhalten: ${message}\n\nVielen Dank!`
         };
 
         const msgToAdmin = {
-            to: 'fixedemail@yourdomain.com',
-            from: 'info@yourdomain.com',
+            to: 'janis.felder@stud.hslu.ch',
+            from: 'info@tourdebier.com',
             subject: 'Neue Nachricht erhalten',
             text: `Sie haben eine neue Nachricht von ${name} erhalten:\n\n${message}`
         };
