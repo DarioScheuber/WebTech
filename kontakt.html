@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour de Bier</title>
     <link rel="stylesheet" href="design.css">
 </head>
-
 <body>
     <header>
         <img src="img/home.jpg" alt="Banner Bild" style="width: 100%; height: 170px;">
-        <img id="logo" class="logo" src="img/Tour-The-Beer-Logo.png" alt="Logo" style="position: absolute; top: 10px; right: 10px; width: 150px; height: auto;">
+        <img id="logo" class="logo" src="img/Tour-The-Beer-Logo.png" alt="Logo"
+            style="position: absolute; top: 10px; right: 10px; width: 150px; height: auto;">
         <h1>Tour de Bier</h1>
     </header>
 
@@ -27,7 +26,7 @@
     <main>
         <h2>Kontaktformular</h2>
         <div class="container">
-            <form method="post" action="/.netlify/functions/send-email" netlify>
+            <form method="post" action="/.netlify/functions/send-email">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -45,7 +44,29 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const json = JSON.stringify(Object.fromEntries(formData));
+            fetch(this.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: json
+            }).then(response => {
+                if (response.ok) {
+                    alert('Nachricht erfolgreich gesendet!');
+                    return response.json();
+                }
+                throw new Error('Ein Fehler ist aufgetreten!');
+            }).then(data => {
+                console.log('Success:', data);
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Fehler beim Senden der Nachricht.');
+            });
+        });
+    </script>
 
     <footer>
         <p>&copy; 2024 Tour de Bier. Alle Rechte vorbehalten.</p>
