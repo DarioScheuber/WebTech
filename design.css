@@ -216,3 +216,35 @@ button:hover {
 [data-id="maximenuck137"] .mobilemenuck-item > .level1.active {
 	background: #AFCBF0;
 }
+
+
+
+#veranstaltungen {
+    max-width: 1200px; /* Anpassung an die Breite des Inhalts */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.event-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.event {
+    flex: 1; /* Erlaubt den Events, sich gleichmäßig zu verteilen */
+    margin-right: 20px; /* Abstand zwischen den Events */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Etwas Schatten für bessere Abgrenzung */
+    padding: 20px;
+    background: white;
+}
+
+.event:last-child {
+    margin-right: 0; /* Entfernt den Rand am letzten Element, um Überläufe zu verhindern */
+}
+
+.event img {
+    width: 100%; /* Lässt das Bild die Breite des Containers ausfüllen */
+    height: auto;
+    border-radius: 8px; /* Runde Ecken für das Bild */
+}
