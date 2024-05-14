@@ -26,7 +26,7 @@
     <main>
         <h2>Kontaktformular</h2>
         <div class="container">
-            <form method="post" action="/.netlify/functions/send-email">
+            <form action="https://formsubmit.co/dario.scheuber@stud.hslu.ch" method="POST" />
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -43,30 +43,6 @@
             </form>
         </div>
     </main>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            const json = JSON.stringify(Object.fromEntries(formData));
-            fetch(this.action, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: json
-            }).then(response => {
-                if (response.ok) {
-                    alert('Nachricht erfolgreich gesendet!');
-                    return response.json();
-                }
-                throw new Error('Ein Fehler ist aufgetreten!');
-            }).then(data => {
-                console.log('Success:', data);
-            }).catch(error => {
-                console.error('Error:', error);
-                alert('Fehler beim Senden der Nachricht.');
-            });
-        });
-    </script>
 
     <footer>
         <p>&copy; 2024 Tour de Bier. Alle Rechte vorbehalten.</p>
