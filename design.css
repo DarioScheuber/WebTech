@@ -13,22 +13,22 @@ header {
 
 nav {
     background-color: #666;
-    padding: 5px 5px;
+    padding: 5px;
 }
 
-nav ul {
+nav ul, #navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-nav ul li {
+nav ul li, #navbar ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 20px;
 }
 
-nav ul li a {
+nav ul li a, #navbar ul li a {
     text-decoration: none;
     color: #fff;
 }
@@ -45,23 +45,6 @@ nav ul li a {
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-#navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-#navbar ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-#navbar ul li a {
-    color: #fff; 
-    text-decoration: none;
-    font-size: 18px;
 }
 
 main {
@@ -91,33 +74,27 @@ h1 {
 h2 {
     font-style: italic;
     font-size: 36px;
-    color: rgb(255, 255, 255);
+    color: #fff;
     text-align: center;
     font-family: sans-serif;
-    text-shadow:  1px  1px 1px black,
-    1px -1px 1px black,
-   -1px  1px 1px black,
-   -1px -1px 1px black;
+    text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
 }
 
-
-p{
+p {
     font-size: 16px;
     text-align: center;
-  }
+}
 
 div.boxcontainer {
-    min-height:200px;
+    min-height: 200px;
     background-color: #fff;
     border: 20px solid #ccc;
     border-radius: 2px;
-
-    
 }
-div.box1, div.box2, div.box3 {
-    width:33.333%;
-    display:table-cell;
 
+div.box1, div.box2, div.box3 {
+    width: 33.333%;
+    display: table-cell;
 }
 
 .mitte {
@@ -126,50 +103,6 @@ div.box1, div.box2, div.box3 {
     justify-content: center;
 }
 
-/* Kontaktformular */
-
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* Mitgliederliste */
 .members {
     display: flex;
     justify-content: center;
@@ -177,47 +110,21 @@ button:hover {
     gap: 20px;
     padding: 20px;
 }
+
 .member {
     width: 200px;
     text-align: center;
 }
+
 .member img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
 }
+
 .member h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin: 10px 0 5px;
 }
-
-
-[data-id="maximenuck137"] .mobilemenuck-item > .level1 {
-	background: #2A3252;
-	color: #FFFFFF;
-	margin-bottom: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	text-align: center;
-	line-height: 35px;
-	font-size: 18px;
-}
-
-[data-id="maximenuck137"] .mobilemenuck-item > .level1 a {
-	color: #FFFFFF;
-	line-height: 35px;
-	font-size: 18px;
-}
-
-[data-id="maximenuck137"] .mobilemenuck-item > .level1:hover, [data-id="maximenuck137"] .mobilemenuck-item > .level1.open {
-	background: #AFCBF0;
-}
-
-[data-id="maximenuck137"] .mobilemenuck-item > .level1.active {
-	background: #AFCBF0;
-}
-
-
 
 #veranstaltungen {
     max-width: 1200px;
@@ -232,28 +139,23 @@ button:hover {
 }
 
 .event {
-    flex: 1; 
+    flex: 1;
     margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     background: white;
 }
 
 .event:last-child {
-    margin-right: 0; 
+    margin-right: 0;
 }
 
 .event img {
-    width: 100%; 
+    width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-
-
-
-
-/* Für Promillenrechner */
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -263,15 +165,11 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.drink-group {
+.drink-group, .input-group {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.input-group {
-    margin-bottom: 15px;
 }
 
 .input-group label {

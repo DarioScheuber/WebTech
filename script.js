@@ -3,16 +3,19 @@ window.onscroll = function() {fixNavbar()};
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
+
+/* Navbar bim abescrolle fixierä */
 function fixNavbar() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("fixed");
-    document.body.style.paddingTop = navbar.offsetHeight + 'px'; // Um Platz für die fixierte Navbar zu schaffen
+    document.body.style.paddingTop = navbar.offsetHeight + 'px'; // für de Platz vo de fixierte Navbar 
   } else {
     navbar.classList.remove("fixed");
     document.body.style.paddingTop = 0; 
   }
 }
 
+/* Canvas Bierglas zeichnä */
 function draw() {
   let canvas = document.getElementById("canvas");
   let c = canvas.getContext('2d');
@@ -41,6 +44,8 @@ function draw() {
 let positiony = 0;
 let timeUntilNextFrame = 1000 / 50;
 
+
+/* Canvas Bier und schum animation */
 function animate() {
   let canvas = document.getElementById("canvas");
   let c = canvas.getContext('2d');
@@ -54,13 +59,12 @@ function animate() {
   c.fillRect(215, 285, -200, positiony);
   c.fillStyle = "yellow";
   c.fillRect(215, 285, -200, (positiony * 0.8));
-  //c.fillStyle = "rgba(255, 255, 255, 0.6)";
-  //c.fillRect(15, 120, 200, 60);
   let img = document.getElementById("logo");
   c.drawImage(img, 63, 100, 100, 100);
 
 }
 
+/* Canvas Bier füllä */
 function update() {
   positiony = positiony - 2;
   if (positiony < -275) {
@@ -102,8 +106,8 @@ function calculateAlcohol() {
             document.getElementById('result').textContent = 'Bitte geben Sie gültige Werte für alle Getränke ein.';
             return;
         }
-
-        totalAlcoholContentGrams += volume * abv * 0.8 * 10; // in Gramm
+        //Quelle https://de.wikipedia.org/wiki/Blutalkoholkonzentration
+        totalAlcoholContentGrams += volume * abv * 0.8 * 10; // in Gramm  0.8 = Dichti von ALk
     }
 
     const age = parseInt(document.getElementById('age').value);
@@ -116,9 +120,9 @@ function calculateAlcohol() {
     }
 
     // Widmark-Formel für Blutalkoholkonzentration (BAC)
-    // r ist der Reduktionsfaktor: 0.68 für Männer und 0.55 für Frauen
-    const r = gender === 'male' ? 0.68 : 0.55;
-    const bac = (totalAlcoholContentGrams / (weight * r)).toFixed(3); // BAC in Promille
+    //Quelle https://idw-online.de/de/news9704#:~:text=Widmark%20definierte%20die%20Blutalkoholkonzentration%20als,das%20K%C3%B6rpergewicht%20p%20in%20Kilogramm.
+    const r = gender === 'male' ? 0.7 : 0.6;  // r isch der Reduktionsfaktor: 0.7 für Männer und 0.6 für Fraue
+    const bac = (totalAlcoholContentGrams / (weight * r)).toFixed(3); // BAC Formel in Promille
 
     document.getElementById('result').textContent = `Der geschätzte Blutalkoholgehalt beträgt ${bac} Promille.`;
 }
