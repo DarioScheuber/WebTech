@@ -38,6 +38,9 @@ function draw() {
   c.strokeStyle = "black";
   c.stroke();
   c.closePath();
+  let img = document.getElementById("logo");
+  c.drawImage(img, 63, 100, 100, 100);
+
   animate();
 }
 
@@ -59,9 +62,6 @@ function animate() {
   c.fillRect(215, 285, -200, positiony);
   c.fillStyle = "yellow";
   c.fillRect(215, 285, -200, (positiony * 0.8));
-  let img = document.getElementById("logo");
-  c.drawImage(img, 63, 100, 100, 100);
-
 }
 
 /* Canvas Bier füllä */
